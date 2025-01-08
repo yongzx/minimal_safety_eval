@@ -23,7 +23,7 @@ with open(fp) as rf:
         input_string = INST.format(question=line["input_prompt"], answer=line["output"])
         model_outputs.append(input_string)
 
-### generation
+### generation (eval)
 sampling_params = SamplingParams(temperature=0, n=1, max_tokens=10)
 llm = LLM(model="sorry-bench/ft-mistral-7b-instruct-v0.2-sorry-bench-202406")
 outputs = llm.generate(model_outputs, sampling_params)
